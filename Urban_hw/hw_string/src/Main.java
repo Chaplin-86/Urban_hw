@@ -2,8 +2,7 @@ import java.util.Arrays;
 
 import static java.lang.String.valueOf;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 public class Main {
     public static void main(String[] args) {
 
@@ -51,11 +50,11 @@ public class Main {
          * Т.е. "15".
          */
 
-//        String stroke = "12345";
-//        String first = valueOf(stroke.charAt(0));
-//        String last = valueOf(stroke.charAt(4));
-//        String result = first.concat(last);
-//        System.out.println(result);
+        String stroke = "12345";
+        String first = valueOf(stroke.charAt(0));
+        String last = valueOf(stroke.charAt(4));
+        String result = first.concat(last);
+        System.out.println(result);
 
 
         /**
@@ -64,8 +63,8 @@ public class Main {
          * Т.е. позиция первого нуля в этой строке равна 2.
          */
 
-//        String some = "1203405";
-//        System.out.println(some.indexOf("0"));
+        String some = "1203405";
+        System.out.println(some.indexOf("0"));
 
     }
 }
