@@ -16,32 +16,24 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        File file = new File("C://Users//Admin//Desktop//ТЕСТИРОВЩИК//JAVA//Urban_Mobile_Developer/File");
+        File file = new File("file.txt");
         FileWriter fileWriter = new FileWriter(file, true);
         Scanner scanner = new Scanner(System.in);
         String input;
 
+        System.out.println("Введите данные для записи");
         do {
-
-            System.out.println("Введите данные для записи");
             input = scanner.nextLine();
-            fileWriter.write(input);
+            if(input.equals("0")){
+                System.out.println("Файл создан");
+                fileWriter.close();
+                break;
+            }
+
+            fileWriter.write(input + "\n");
 
             System.out.println("Введите что-нибудь еще");
-            input = scanner.next();
-            fileWriter.write(input);
-
-        } while (!input.equals("0") );
-
-        if(input.equals("0")){
-            System.out.println("Файл создан");
-        }
-
-
-
-
-
-
+        } while (true);
 
     }
 }

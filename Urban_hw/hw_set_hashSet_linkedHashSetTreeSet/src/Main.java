@@ -17,36 +17,25 @@ public class Main {
 
         //Task 1
 
-//        Set<String> colourCars = new HashSet<>(new Comparator<>() {
-//
-//
-//            @Override
-//            public int compare(int o1, int o2) {
-//                return 0;
-//            }
-//
-//            @Override
-//            public boolean equals(Object obj) {
-//                return false;
-//            }
-//        });
-//        colourCars.add("red");
-//        colourCars.add("blue");
-//        colourCars.add("green");
-//        colourCars.add("yellow");
-//        colourCars.add("brown");
-//
-//        Set<String>colourBikes = new HashSet<>();
-//        colourBikes.add("blue");
-//        colourBikes.add("yellow");
-//        colourBikes.add("orange");
-//        colourBikes.add("black");
-//        colourBikes.add("purple");
-//
-//        if(colourCars.equals(colourBikes)) {
-//
-//
-//        }
+        Set<String> colourCars = new HashSet<>();
+        colourCars.add("red");
+        colourCars.add("blue");
+        colourCars.add("green");
+        colourCars.add("yellow");
+        colourCars.add("brown");
+
+        Set<String>colourBikes = new HashSet<>();
+        colourBikes.add("blue");
+        colourBikes.add("yellow");
+        colourBikes.add("orange");
+        colourBikes.add("black");
+        colourBikes.add("purple");
+
+        System.out.println(getSameElements(colourBikes, colourCars));
+
+        System.out.println("____________________________");
+
+        //Task 2
 
         TreeSet<Integer> numbers = new TreeSet<>();
         numbers.add(5);
@@ -55,17 +44,28 @@ public class Main {
         numbers.add(348);
         numbers.add(-10);
 
-        System.out.println(numbers);
+        checkNumbers(numbers);
 
+   }
 
-        for(Integer number : numbers) {
-            if(number > 15 && number % 2 == 0) {
-                System.out.println("Первая группа чисел " + number);
-            } else {
-                System.out.println("Вторая группа чисел " + number / 2);
-            }
-        }
+   public static Set<String> getSameElements(Set<String> set1, Set<String> set2) {
+        Set<String>result = new HashSet<>(set1);
+        result.retainAll(set2);
 
+        return result;
+   }
 
-    }
+   public static void checkNumbers(Set<Integer> numbers) {
+       for(Integer number : numbers) {
+           if(number > 15 && number % 2 == 0) {
+               System.out.println("Первая группа чисел " + number);
+           } else {
+               System.out.println("Вторая группа чисел " + number / 2);
+           }
+       }
+
+   }
+
 }
+
+// ctrl+alt+l - форматирование
