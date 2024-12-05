@@ -16,10 +16,22 @@ public class Main {
          */
 
         //Task 1
+        List<String>animals = new ArrayList<>();
+        animals.add("bear");
+        animals.add("bird");
+        animals.add("crocodile");
+        animals.add("dolphin");
+        animals.add("elephant");
+        animals.add("frog");
+        animals.add("giraffe");
+        animals.add("gorilla");
+        animals.add("hamster");
+        animals.add("hedgehog");
 
-//        Stream<String> animalStream = Stream.of("bear", "bird", "crocodile", "dolphin", "elephant", "frog", "giraffe", "gorilla", "hamster", "hedgehog");
-//        animalStream.takeWhile().
-//                forEach(System.out::println);
+        int result = (int) animals.stream().filter(s -> s.startsWith("h")).count();
+        System.out.println(result);
+
+        System.out.println("_________________________");
 
         //Task 2
 
