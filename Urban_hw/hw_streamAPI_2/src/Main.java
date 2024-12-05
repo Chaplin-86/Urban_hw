@@ -30,6 +30,8 @@ public class Main {
         Optional<Integer>resultOdd = numbersList.stream().filter(element -> element % 2 != 0).reduce((x, y) -> x + y);
         System.out.println("Сумма нечетных чисел" + " " + resultOdd.get());
 
+        System.out.println("_____________________");
+
         //Task 2
 
         List<String> namesBoys = new ArrayList<>();
@@ -42,7 +44,8 @@ public class Main {
         namesBoys.add("Лёша");
         namesBoys.add("Богдан");
         namesBoys.add("Дима");
-        namesBoys.add("Клим");
+
+        namesBoys.stream().distinct().forEach(System.out::println);
 
 
 
