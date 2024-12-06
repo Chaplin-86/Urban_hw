@@ -27,8 +27,8 @@ public class Main {
         Optional<Integer> resultEven = numbersList.stream().filter(element -> element % 2 == 0).reduce((x, y) -> x + y);
         System.out.println("Сумма четных чисел" + " " + resultEven.get());
 
-        Optional<Integer>resultOdd = numbersList.stream().filter(element -> element % 2 != 0).reduce((x, y) -> x + y);
-        System.out.println("Сумма нечетных чисел" + " " + resultOdd.get());
+        int resultOdd = numbersList.stream().filter(element -> element % 2 != 0).mapToInt(Integer::intValue).sum();
+        System.out.println("Сумма нечетных чисел" + " " + resultOdd);
 
         System.out.println("_____________________");
 
