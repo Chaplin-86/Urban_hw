@@ -2,8 +2,6 @@
 import java.util.ArrayList;
 import java.util.List;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
         /**
@@ -28,7 +26,7 @@ public class Main {
         System.out.println(sumOfEven(numbers, expression));
 
         //Task 2
-        
+
         List<String> stationary = new ArrayList<>();
         stationary.add("pencil");
         stationary.add("ruler");
@@ -38,46 +36,44 @@ public class Main {
         stationary.add("scissors");
         stationary.add("paper clip");
 
-        longestWord(stationary);
-
+        StringExpression exp = list -> {
+            if (list.isEmpty()) {
+                return null;
+            }
+            String longestWord = list.get(0);
+            for (String s : list) {
+                if (s.length() > longestWord.length()) {
+                    longestWord = s;
+                }
+            }
+            return longestWord;
+        };
+        String result = findInStringList(stationary, exp);
+        System.out.println(result);
     }
+
+
 
     public static int sumOfEven(List<Integer> list, Expression exp) {
         int result = 0;
-        for(int element : list) {
-            if(exp.isEqual(element)) {
+        for (int element : list) {
+            if (exp.isEqual(element)) {
                 result += element;
             }
         }
         return result;
     }
 
-    public static void longestWord (List<String>list) {
-        int index = 0;
-        int longestWord = list.get(0).length();
-        for(int i = 0; i < list.size(); i++) {
-            if (list.get(i).length() > longestWord) {
-                longestWord = list.get(i).length();
-                index = i;
-            }
-        }
-            System.out.println("Самое длинное слово в списке - " + longestWord + " символов, " + list.get(index));
-
+    public static String findInStringList(List<String> list, StringExpression exp) {
+        return exp.getStringByCondition(list);
     }
-
-
-
 }
-
-
-
 
 interface Expression {
     boolean isEqual(int a);
 }
 
 interface StringExpression {
-
-
+    String getStringByCondition(List<String> list);
 
 }
