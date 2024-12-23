@@ -34,20 +34,19 @@ public class Main {
         System.out.println("_________________________");
 
         //Task 2
+        List<Person>fellowship = new ArrayList<>();
+        fellowship.add(new Person("Bilbo Baggins", 131));
+        fellowship.add(new Person("Frodo Baggins", 50));
+        fellowship.add(new Person("Peregrin Took", 29));
+        fellowship.add(new Person("Meriadoc Brandybuck", 37));
+        fellowship.add(new Person("Samwise Gamgee", 39));
+        fellowship.add(new Person("Boromir", 41));
+        fellowship.add(new Person("Aragorn", 88));
+        fellowship.add(new Person("Gimli", 140));
+        fellowship.add(new Person("Legolas", 500));
+        fellowship.add(new Person("Gandalf the Grey", 4000));
 
-        Stream<Person> people = Stream.of(
-                new Person("Bilbo Baggins", 131),
-                new Person("Frodo Baggins",50),
-                new Person("Peregrin Took", 29),
-                new Person("Meriadoc Brandybuck", 37),
-                new Person("Samwise Gamgee", 39),
-                new Person("Boromir", 41),
-                new Person("Aragorn", 88),
-                new Person("Gimli", 140),
-                new Person("Legolas", 500),
-                new Person ("Gandalf the Grey", 4000)
-        );
-        people
+        fellowship.stream()
                 .filter(age -> (age.getAge() > 30))
                 .map(person -> person.getName() + " " + person.getAge())
                 .forEach(System.out::println);
